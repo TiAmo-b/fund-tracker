@@ -64,7 +64,7 @@ export function PerformanceChart({ fundCode, fundName }: PerformanceChartProps) 
     const idx = dateIndexMap.get(tx.date);
     if (idx !== undefined) {
       const marker = {
-        coord: [idx, parseFloat(chartData[idx].value)],
+        coord: [idx, parseFloat(chartData[idx].value)] as [number, number],
         value: `¥${tx.amount.toFixed(0)}`,
         tx,
       };
