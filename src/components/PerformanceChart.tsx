@@ -63,8 +63,8 @@ export function PerformanceChart({ fundCode, fundName }: PerformanceChartProps) 
   fundTxs.forEach((tx) => {
     const idx = dateIndexMap.get(tx.date);
     if (idx !== undefined) {
-      const marker = {
-        coord: [idx, parseFloat(chartData[idx].value)] as [number, number],
+      const marker: { coord: [number, number]; value: string; tx: Transaction } = {
+        coord: [idx, parseFloat(chartData[idx].value)],
         value: `¥${tx.amount.toFixed(0)}`,
         tx,
       };
